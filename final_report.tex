@@ -1,0 +1,164 @@
+\documentclass{amsart}
+\input{aux/style}
+\input{aux/usualcmds}
+\addbibresource{aux/usualpapers.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\input{aux/commands}
+\addbibresource{aux/bibliography.bib}
+\usepackage[skip=3.5pt]{parskip}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\title[Final Report]{Final Report}
+\author[Final report]{Anibal~M.~Medina-Mardones}
+
+\begin{document}
+\noindent MSC55 \hfill \today
+\vskip30pt
+\maketitle
+
+\thispagestyle{empty}
+
+\section*{Introduction}
+
+Report presented after 24 months of work at the MPIM.
+It contains a summary of the 12 papers I finished during my stay at the institute.
+The order used is chosen by expositional reasons.
+I also include a list of invited talks during this period.
+
+\bigskip
+\section*{Acknowledgment}
+
+I would like to thank the following MPIM members and visitors for several illuminating and ongoing conversations: Tobias Barthel, Vladimir Dotsenko, Viktoriya Ozornova, Aleksandar Milivojevic, Lukas Muller, Manuel Rivera, Paolo Salvatore, Luuk Stehouwer, and Peter Teichner.
+
+\begin{center}
+	\bigskip
+	\vskip3.5pt
+	\textsc{Gratitude}
+	\smallskip
+\end{center}
+
+The interactions with friendly staff and colleagues made these strange pandemic times the best they could have been.
+For this and for the wonderful working conditions it provides, I am grateful to everyone that makes the MPIM possible.
+
+\begin{center}
+	\bigskip
+	\vskip3.5pt
+	\textsc{Papers}
+	\smallskip
+\end{center}
+
+\cref{fast_sq}. \ New formulas for cup-$i$ products and fast computation of Steenrod squares \cite{medina2023fast_sq} \par
+\cref{per_st}. \ Persistence Steenrod modules \cite{medina2022per_st} \par
+\cref{axiomatic}. \ An axiomatic characterization of Steenrod's cup-$i$ products \cite{medina2022axiomatic} \par
+\cref{assembly}. \ Ranicki-Weiss assembly and the Steenrod construction \cite{medina2022assembly} \par
+\cref{may_st}. \ Cochain level May--Steenrod operations \cite{medina2021may_st} \par
+\cref{comch}. \ A computer algebra system for the study of commutativity up to coherent homotopies \cite{medina2021comch} \par
+\cref{cube_einfty}. \ A combinatorial $E_\infty $-algebra structure on cubical cochains and the Cartan--Serre map \cite{medina2022cube_einfty} \par
+\cref{cobar}. \ The cobar construction as an $E_\infty$-bialgebra model of the based loop space \cite{medina2021cobar} \par
+\cref{flowing}. \ Flowing from intersection product to cup product \cite{medina2021flowing} \par
+\cref{dennis}. \ The diagonal of cellular spaces and effective algebro-homotopical constructions \cite{medina2022dennis} \par
+\cref{func_top}. \ Persistent homology for functionals \cite{medina2022fuct_top} \par
+\cref{hyper}. \ Hyperharmonic analysis for the study of high-order information-theoretic signals \cite{medina2021flowing} \par
+
+\newpage
+
+\subsection{New formulas for cup-$i$ products and fast computation of Steenrod squares {\rm \cite{medina2023fast_sq}}} \label{fast_sq}
+
+Operations on the cohomology of spaces are important tools enhancing the descriptive power of this computable invariant.
+For cohomology with mod 2 coefficients, Steenrod squares are the most significant of these operations.
+They were introduced in \cite{steenrod1947products} via explicit cochain formulas defining so-called cup-$i$ products.
+In this paper I present new formulas defining cup-$i$ products, and use them to introduce a fast algorithm for the computation of Steenrod squares on the cohomology of simplicial complexes.
+
+\subsection{Persistence Steenrod modules {\rm \cite{medina2022per_st}}} \label{per_st}
+
+It has long been envisioned that the strength of the barcode invariant of filtered spaces -- the primary tool in topological data analysis -- could be increased using cohomology operations.
+Leveraging the advances in the computation of Steenrod squares mentioned in \cref{fast_sq}, in this paper we introduce a new family of computable invariants on mod~2 persistent cohomology termed $\Sq^k$-barcodes.
+Additionally, we present a complete algorithmic pipeline for their computation and illustrate their real-world applicability using the space of conformations of the cyclo-octane molecule.
+To do so me developed the open source software \href{https://steenroder.readthedocs.io/en/latest/}{\texttt{steenroder}}.
+
+\subsection{An axiomatic characterization of Steenrod's cup-$i$ products {\rm \cite{medina2022axiomatic}}} \label{axiomatic}
+
+It was not clear that the new formulas introduced in the previously mentioned paper \cref{fast_sq} give rise to the same cup-$i$ product as those defined by Steenrod's formulas \cite{steenrod1947products}.
+In this paper I show via an axiomatic characterization that, despite their apparent difference, all formulas in the literature give rise to the same cup-$i$ products.
+
+\subsection{Ranicki-Weiss assembly and the Steenrod construction {\rm \cite{medina2022assembly}}} \label{assembly}
+
+In this paper I consider the assembly functor of Ranicki--Weiss \cite{ranicki1990assembly} from chain complex valued presheaves on a simplicial complex $X$ to chain complexes, which can be extended to the L-theory assembly functors of \cite{ranicki1992topological} by considering chain complexes with derived Poincar\'e duality.
+Ranicki and Weiss showed that assembly lifts to a functor to comodules over the Alexander--Whitney coalgebra of $X$.
+In this paper I show that assembly lifts to comodules over the Steenrod cup-$i$ coalgebra of $X$ and, more importantly, that this lift is fully faithful.
+
+\subsection{Cochain level May--Steenrod operations {\rm \cite{medina2021may_st}}} \label{may_st}
+
+As mentioned in \cref{fast_sq}, Steenrod introduced his square operations in the mod~2 cohomology of spaces via explicit formulas for cup-$i$ products of cochain.
+Indirectly, these operations can be defined using the mod~2 homology of the symmetric group $\sym_2$ and have analogues for any prime $p$ using the mod~$p$ homology of $\sym_p$.
+Using work by May one can unify these constructions integrally using $E_\infty$-algebras, but no formulas were known analogous to the cup-$i$ products for odd Steenrod operations.
+In this paper we present such formulas for algebras over certain models of the $E_\infty$-operad, and derive from them cup-$(p,i)$ products for simplicial and, using work described in \cref{cube_einfty}, also cubical sets.
+
+\subsection{A computer algebra system for the study of commutativity up to coherent homotopies {\rm \cite{medina2021comch}}} \label{comch}
+
+The cochain level representation of Steenrod operations given by our construction of cup-$(p,i)$ products described in \cref{may_st} is explicit enough for these to be implemented effectively.
+This is one of the goals of the open source software \href{https://comch.readthedocs.io/en/latest/}{comch} introduced in this paper.
+Additionally, this project provides models for the surjection and Barratt--Eccles operads introduced respectively by McClure--Smith \cite{mcclure2003multivariable} and Berger--Fresse \cite{berger2004combinatorial}.
+
+\subsection{A combinatorial $E_\infty$-algebra structure on cubical cochains and the Cartan--Serre map {\rm \cite{medina2022cube_einfty}}} \label{cube_einfty}
+
+In this paper we construct an explicit $E_\infty$-structure on the cochains of cubical sets using my model of the $E_\infty$-operad \cite{medina2020prop1}, a model that also acts on cochains of simplicial sets.
+With respect to these $E_\infty$-structures -- which respectively extend the Cartan and Alexander--Whitney products -- we proved that the Cartan--Serre map, used to compare simplicial and cubical singular cochains of spaces, is a quasi-isomorphism of $E_\infty$-coalgebras.
+
+\subsection{The cobar construction as an $E_\infty$-bialgebra model of the based loop space {\rm \cite{medina2021cobar}}} \label{cobar}
+
+In the fifties, Adams introduced a comparison map from his cobar construction on the (simplicial) singular chains of a pointed space to the cubical singular chains on its based loop space.
+This comparison map is a quasi-isomorphism of algebras, which was shown by Baues to be one of bialgebras by considering Serre's cubical coproduct.
+In this work we generalize Baues result by proving that Adams' comparison map is a quasi-isomorphism of $E_\infty$-bialgebras, i.e. of monoids in the category of $E_\infty$-coalgebras.
+To do so we use my model of the $E_\infty$-operad and its action on cubical chains (\cref{cube_einfty}).
+
+\subsection{Flowing from intersection product to cup product {\rm \cite{medina2021flowing}}} \label{flowing}
+
+In this paper we use a vector field flow defined through a cubulation of a closed manifold to reconcile -- at the cochain level -- the partially defined commutative product on geometric cochains with the standard cup product on cubical cochains, which is fully defined and commutative only up to coherent homotopies. The interplay between intersection and cup product dates back to the beginnings of homology theory, but, to our knowledge, this result is the first to give an explicit cochain level comparison between these approaches.
+
+\subsection{The diagonal of cellular spaces and effective algebro-homotopical constructions {\rm \cite{medina2022dennis}}} \label{dennis}
+
+This is a survey paper in the occasion of Dennis Sullivan's $80^\th$ birthday.
+The rational homotopy theory of spaces is controlled by so-called $C_\infty$-coalgebras, thought via Koszul duality as Lie models, whereas the theory of $E_\infty$-coalgebras offers an appropriate setting for homotopy theory integrally.
+Both of these coalgebra structures are derived versions of the diagonal of spaces after homotopically correcting the symmetries broken when discretizing spaces through cellular structures.
+
+\subsection{Persistent homology for functionals {\rm \cite{medina2022fuct_top}}} \label{func_top}
+
+As mentioned in \cref{per_st}, persistence homology is a powerful tool in applied topology.
+In this paper we consider its use in theoretical mathematics.
+We introduce topological conditions on a broad class of functionals that ensure that the persistent homology modules of their associated sublevel set filtration admit persistence diagrams, which, in particular, implies that they satisfy generalized Morse inequalities. We illustrate the applicability of these results by recasting the original proof of the Unstable Minimal Surface Theorem given by Morse and Tompkins \cite{morse1939minimal} in a modern and rigorous framework.
+
+\subsection{Hyperharmonic analysis for the study of high-order information-theoretic signals {\rm \cite{medina2021flowing}}} \label{hyper}
+
+Network representations often cannot fully account for the structural richness of complex systems spanning multiple levels of organization.
+Recently proposed high-order information-theoretic signals are well-suited to capture synergistic phenomena that transcend pairwise interactions; however, the exponential-growth of their cardinality severely hinders their applicability.
+In \cite{medina2021hyperharmonic}, a paper in which I am the first author, we combined methods from harmonic analysis and combinatorial topology to construct efficient representations of high-order information-theoretic signals.
+The core of our method is the diagonalization of a discrete version of the Laplace--de Rham operator, that geometrically encodes structural properties of the system.
+
+\section*{Invited Talks}
+
+\newcommand{\newTalk}[3]{\noindent#2 \hfill #3 \\}
+
+\newTalk{Persistence Steenrod modules}{Universit\`a di Roma ``Tor Vergata'' (\textit{Conference})}{2022}
+\newTalk{Git for mathematicians}{University of Oregon (\textit{Seminar})}{2022}
+\newTalk{Effective constructions in algebraic topology}{Institute for Mathematics and its Applications in Minneapolis (\textit{Conference})}{2022}
+\newTalk{Effective constructions in algebraic topology}{Centre Recerca Matemática en Barcelona (\textit{Conference})}{2022}
+\newTalk{Effective constructions in algebraic topology}{Universidad Aut\'onoma de Madrid (\textit{Seminar})}{2022}
+\newTalk{Effective constructions in algebraic topology}{Vrije Universiteit Amsterdam (\textit{Seminar})}{2022}
+\newTalk{Effective constructions in algebraic topology}{Durham University (\textit{Conference})}{2022}
+\newTalk{Effective constructions in algebraic topology}{Ohio State University (\textit{Seminar})}{2022}
+\newTalk{Derived structures on cochains of spaces}{Universit\'{e} Sorbonne Paris Nord (\textit{Seminar})}{2022}
+\newTalk{Persistence in functional topology}{Max Planck Institute for Mathematics (\textit{Seminar})}{2022}
+\newTalk{Effective constructions in algebraic topology and applications}{Bowling Green State University and Universidad de Toledo (\textit{Seminar})}{2022}
+\newTalk{Cochain level Steenrod squares in data science}{Technical University of Munich (\textit{Seminar})}{2021}
+\newTalk{Cochain level Steenrod squares in data science}{Binghamton University (\textit{Conference})}{2021}
+\newTalk{Cochain level Steenrod squares in data science}{The University of Aberdeen (\textit{Colloquium})}{2021}
+\newTalk{Effective constructions in algebraic topology and applications}{Max Planck Institute for Mathematics (\textit{Colloquium})}{2021}
+\newTalk{Topological machine learning}{University of Rome Tor Vergata (\textit{Minicourse})}{2021}
+\newTalk{Derived Commutativity in Category Theory and Data Science}{University of Edinburgh (\textit{Colloquium})}{2021}
+
+\newpage
+\sloppy
+\printbibliography
+\end{document}
